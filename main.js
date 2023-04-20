@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            listToDo: []
+            listToDo: [],
+            newTask: '',
         }
     },
     methods: {
@@ -12,6 +13,20 @@ createApp({
                 .then(response => {
                     console.log(response)
                     this.listToDo = response.data;
+                })
+        },
+        addToDo() {
+            const data = {
+                newTask: this.newTask
+            };
+
+            axios.post('functions.php', data,
+                {
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                .then(response => {
+                    this.listToDo = response.data;
+                    this.newTask = '';
                 })
         }
     },

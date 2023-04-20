@@ -12,16 +12,19 @@
     
     <div id="app">
         <div class="container">
-        <h1 class="text-center">MyDev To-Do List</h1>
+        <h1 class="text-center m-3">MyDev To-Do</h1>
         <ul class="list-group">
-          <li class="list-group-item">An item</li>
+          <li class="list-group-item" v-for="(todo,index) in listToDo" :key="index">
+            <span class="ms_text_description">{{todo.task}}</span>
+          </li>
         </ul>
-
+        <input v-model="newTask" type="text">
+        <button class="btn btn-primary" @click="addToDo">Add Task</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js" integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src='main.js'></script>
+    <script src="main.js"></script>
 </body>
 </html>

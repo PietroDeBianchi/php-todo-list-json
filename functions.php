@@ -23,5 +23,17 @@ $listToDo = [
         ],
     ];
 
+    if(isset($_POST['newTask'])) {
+        $newTask = $_POST['newTask'];
+
+       $listToDo[] = [
+        'task' => $newTask,
+        'todo' => false
+        ];
+
+    }
+
     header("Content-Type: application/json");
     echo json_encode($listToDo);
+
+    
