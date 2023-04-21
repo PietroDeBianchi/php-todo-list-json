@@ -1,34 +1,34 @@
 <?php
 
-$listToDo = [ 
-        [
-            "task" => "HTML" ,
-            "todo" => true,
-        ],
-        [
-            "task" => "CSS" ,
-            "todo" => true,
-        ],
-        [
-            "task" => "JS" ,
-            "todo" => true,
-        ],
-        [
-            "task" => "PHP" ,
-            "todo" => false,
-        ],
-        [
-            "task" => "LARAVEL" ,
-            "todo" => false,
-        ],
+$listToDo = [
+    [
+        "task" => "HTML",
+        "done" => true,
+    ],
+    [
+        "task" => "CSS",
+        "done" => true,
+    ],
+    [
+        "task" => "JS",
+        "done" => true,
+    ],
+    [
+        "task" => "PHP",
+        "done" => false,
+    ],
+    [
+        "task" => "LARAVEL",
+        "done" => false,
+    ],
+];
+
+if (isset($_POST['tasking'])) {
+    $listToDo[] = [
+        'task' => $_POST['tasking']['task'],
+        'done' => $_POST['tasking']['done'] === "false" ? false : true
     ];
+};
 
-    if(isset($_POST['newTask'])) {
-        $listToDo = $_POST['newTask'];
-    
-    };
-
-    header("Content-Type: application/json");
-    echo json_encode($listToDo);
-
-    
+header("Content-Type: application/json");
+echo json_encode($listToDo);

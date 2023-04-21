@@ -17,11 +17,12 @@
     <div class="container">
       <h1 class="text-center m-3">MyDev To-Do</h1>
       <ul class="list-group">
-        <li class="list-group-item" v-for="(todo,index) in listToDo" :key="index">
+        <li class="list-group-item" :class="{'text-decoration-line-through' : done }" v-for="(todo,index) in listToDo"
+          :key="index">
           <span class="ms_text_description">{{todo.task}}</span>
         </li>
       </ul>
-      <input v-model="newTask" type="text">
+      <input v-model="newTask.task" type="text">
       <button class="btn btn-primary" @click="addToDo">Add Task</button>
     </div>
   </div>

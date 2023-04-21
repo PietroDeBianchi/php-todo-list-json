@@ -6,7 +6,7 @@ createApp({
             listToDo: [],
             newTask: {
                 task: '',
-                todo: 'false',
+                done: false
             }
         }
     },
@@ -20,7 +20,7 @@ createApp({
         },
         addToDo() {
             const data = {
-                newTask: this.newTask
+                tasking: this.newTask
             };
 
             axios.post('functions.php', data,
@@ -29,10 +29,7 @@ createApp({
                 })
                 .then(response => {
                     this.listToDo = response.data;
-                    this.newTask = {
-                        task: '',
-                        todo: 'false',
-                    };
+                    this.newTask.task = '';
                 })
         },
     },
