@@ -4,7 +4,10 @@ createApp({
     data() {
         return {
             listToDo: [],
-            newTask: '',
+            newTask: {
+                task: '',
+                todo: 'false',
+            }
         }
     },
     methods: {
@@ -28,9 +31,9 @@ createApp({
                     this.listToDo = response.data;
                     this.newTask = '';
                 })
-        }
+        },
     },
     mounted() {
         this.checkList();
     }
-}).mount('#app')
+}).mount('#app');
