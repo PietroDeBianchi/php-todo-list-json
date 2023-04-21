@@ -18,7 +18,7 @@ createApp({
                     this.listToDo = response.data;
                 })
         },
-        addToDo() {
+        submit() {
             const data = {
                 tasking: this.newTask
             };

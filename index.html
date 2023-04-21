@@ -25,8 +25,8 @@
       </ul>
       <div v-else><h3>No Task To Do</h3></div>
       <div class="input-container d-flex align-items-center">
-        <input v-model="newTask.task" type="text">
-        <button class="btn btn-primary" @click="addToDo" @keyup.enter="addToDo">Add Task</button>
+        <input v-model="newTask.task" @keyup.enter="submit" type="text">
+        <button class="btn btn-primary" @click="submit">Add Task</button>
       </div>
     </div>
   </div>
