@@ -4,3 +4,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.input-container input {
+    margin-right: 12px;
+    height: 36px;
+    min-width: 240px;
+}
+
+.fa-trash-can:hover {
+    color: red;
+}

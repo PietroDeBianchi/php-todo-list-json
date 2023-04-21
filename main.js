@@ -40,6 +40,9 @@ createApp({
                 todo.done = true;
             }
         },
+        removeTask(index) {
+            this.listToDo.splice(index, 1);
+        },
     },
     mounted() {
         this.checkList();
