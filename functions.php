@@ -24,12 +24,7 @@ $listToDo = [
     ];
 
     if(isset($_POST['newTask'])) {
-        $newTask = $_POST['newTask'];
-    
-        $listToDo[] = [
-            'task' => $newTask,
-            'todo' => false 
-        ];
+        $listToDo = $_POST['newTask'];
     
     };
 

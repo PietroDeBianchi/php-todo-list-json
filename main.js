@@ -25,11 +25,14 @@ createApp({
 
             axios.post('functions.php', data,
                 {
-                    headers: { 'Content-Type': 'application/json' }
+                    headers: { 'Content-Type': 'multipart/form-data' }
                 })
                 .then(response => {
                     this.listToDo = response.data;
-                    this.newTask = '';
+                    this.newTask = {
+                        task: '',
+                        todo: 'false',
+                    };
                 })
         },
     },
