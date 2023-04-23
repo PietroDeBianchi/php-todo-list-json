@@ -23,7 +23,7 @@
             <i class="fa-solid fa-trash-can p-2" @click="removeTask(index)"></i>
           </li>
         </ul>
-        <div v-else><h4 class="text-center text-light"> - No Task To Do - </h4></div>
+        <div v-else><h4 class="text-center text-light text-decoration-underline">No Task To Do</h4></div>
         <div class="input-container d-flex justify-content-center align-items-center">
           <input v-model="newTask.task" @keyup.enter="submit" type="text">
           <button class="btn btn-primary" @click="submit">Add Task</button>
