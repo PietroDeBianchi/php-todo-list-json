@@ -21,6 +21,7 @@ if (isset($_POST['tasking'])) {
     $dataString = json_encode($listToDo);
     // Write the updated data back to 'database.json' file
     file_put_contents('database.json', $dataString);
+
 } elseif (isset($_POST['remove'])) { // Check if a POST request parameter 'remove' is set
     // Get the index of the task to be removed from the POST data
     $index = $_POST['remove'];
@@ -28,20 +29,18 @@ if (isset($_POST['tasking'])) {
     // Remove the task from the $listToDo array based on the index
     if (isset($listToDo[$index])) {
         array_splice($listToDo, $index, 1);
+
         // Encode the updated $listToDo array back to JSON format
         $dataString = json_encode($listToDo);
         // Write the updated data back to 'database.json' file
         file_put_contents('database.json', $dataString);
-        // Set the response header to indicate JSON format
-        header("Content-Type: application/json");
-        // Encode the $listToDo array back to JSON format and send as response
-        echo json_encode($listToDo);
-        exit(); // Exit the script after sending response
     }
+    
 }
 
 // Set the response header to indicate JSON format
 header("Content-Type: application/json");
 // Encode the $listToDo array back to JSON format and send as response
 echo json_encode($listToDo);
+exit(); // Exit the script after sending response
 ?>
