@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+#app {
+    background-color: #051630;
+    height: 100vh;
+}
+
 li {
     cursor: pointer;
 }
@@ -18,9 +23,16 @@ li:hover {
 }
 
 .input-container input {
-    margin-right: 12px;
-    height: 36px;
+    height: 39.65px;
     min-width: 240px;
+    padding: 12px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+.input-container button {
+    height: 40px;
+    border-radius: 0 5px 5px 0;
 }
 
 .fa-trash-can:hover {

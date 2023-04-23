@@ -13,20 +13,21 @@
 </head>
 
 <body>
-
   <div id="app">
     <div class="container">
-      <h1 class="text-center m-3">MyDev To-Do</h1>
-      <ul class="list-group" v-if="listToDo.length > 0">
-        <li class="list-group-item d-flex justify-content-between" v-for="(todo,index) in listToDo" @click="toogleClass(todo)" :key="index">
-          <span class="ms_text_description" :class="(todo.done == true) ? 'text-decoration-line-through' : '' ">{{todo.task}}</span>
-          <i class="fa-solid fa-trash-can p-2" @click="removeTask(index)"></i>
-        </li>
-      </ul>
-      <div v-else><h3>No Task To Do</h3></div>
-      <div class="input-container d-flex align-items-center">
-        <input v-model="newTask.task" @keyup.enter="submit" type="text">
-        <button class="btn btn-primary" @click="submit">Add Task</button>
+      <h1 class="text-center py-4 text-light">MyDev To-Do</h1>
+      <div class="container w-75">
+        <ul class="list-group" v-if="listToDo.length > 0">
+          <li class="list-group-item d-flex justify-content-between" v-for="(todo,index) in listToDo" @click="toogleClass(todo)" :key="index">
+            <span class="ms_text_description" :class="(todo.done == true) ? 'text-decoration-line-through' : '' ">{{todo.task}}</span>
+            <i class="fa-solid fa-trash-can p-2" @click="removeTask(index)"></i>
+          </li>
+        </ul>
+        <div v-else><h3>No Task To Do</h3></div>
+        <div class="input-container d-flex justify-content-center align-items-center">
+          <input v-model="newTask.task" @keyup.enter="submit" type="text">
+          <button class="btn btn-primary" @click="submit">Add Task</button>
+        </div>
       </div>
     </div>
   </div>
