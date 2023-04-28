@@ -56,12 +56,21 @@ createApp({
             });
         },
         // Toggle task's done status
-        toggleClass(todo) {
-            if (todo.done == true) {
-                todo.done = false;
-            } else {
-                todo.done = true;
-            }
+        toggleClass(index) {
+            // Send POST request to server with updated task data
+            const data = {
+                toggle: index
+            };
+            axios.post('functions.php', data, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                })
+                .then(response => {
+                    // Update list of tasks in Vue component
+                    this.listToDo = response.data;
+                })
+                .catch(error => {
+                    console.error('Failed to update task:', error);
+                });
         },
     },
     mounted() {
@@ -69,3 +78,4 @@ createApp({
         this.checkList();
     }
 }).mount('#app');
+
